@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Archives and backups
+*.zip
+*.backup
+backups/
+
+# Environment / secrets (do not commit)
+.env
+.env.local
+*.pem
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Composer (optional: uncomment if you want vendor installed via composer on deploy)
+# /vendor/

@@ -1,0 +1,955 @@
+/* ==========================================================================
+   Handsome Pete Booking – UI styles
+   Brand: Forest #2D4A3E, Amber #C9A227, Cream #F8F6F0
+   ========================================================================== */
+
+#hp-booking-app {
+    --hp-forest: #2D4A3E;
+    --hp-forest-dark: #1e3329;
+    --hp-forest-light: #3d5f4f;
+    --hp-amber: #C9A227;
+    --hp-amber-dark: #a8841f;
+    --hp-amber-light: #e5b83d;
+    --hp-cream: #F8F6F0;
+    --hp-cream-dark: #ebe8e0;
+    --hp-text: #2D4A3E;
+    --hp-text-muted: #5c7268;
+    --hp-border: #d4ddd8;
+    --hp-focus-ring: rgba(45, 74, 62, 0.35);
+    --hp-disabled-bg: #eef0ee;
+    --hp-disabled-text: #8a9a92;
+    --hp-error-bg: #fef3f2;
+    --hp-error-border: #d92d20;
+    --hp-error-text: #b42318;
+    --hp-success-bg: #ecfdf3;
+    --hp-success-border: #12b76a;
+    --hp-success-text: #027a48;
+    --hp-shadow-sm: 0 1px 2px rgba(45, 74, 62, 0.06);
+    --hp-shadow-md: 0 4px 12px rgba(45, 74, 62, 0.08);
+    --hp-radius: 10px;
+    --hp-radius-sm: 6px;
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: var(--hp-text);
+    background: var(--hp-cream);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#hp-booking-app .hp-app-inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* Interactive header */
+#hp-booking-app .hp-header {
+    background: var(--hp-forest);
+    color: #fff;
+    padding: 1.25rem 1.25rem 1rem;
+    flex-shrink: 0;
+}
+
+#hp-booking-app .hp-header-inner {
+    text-align: center;
+}
+
+#hp-booking-app .hp-header-title {
+    margin: 0 0 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+#hp-booking-app .hp-header-subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+#hp-booking-app .hp-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+#hp-booking-app .hp-stepper-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+}
+
+#hp-booking-app .hp-stepper-item.hp-stepper-active {
+    color: #fff;
+}
+
+#hp-booking-app .hp-stepper-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    font-weight: 700;
+}
+
+#hp-booking-app .hp-stepper-item.hp-stepper-active .hp-stepper-num {
+    background: #fff;
+    color: var(--hp-forest);
+}
+
+#hp-booking-app .hp-stepper-line {
+    width: 1.5rem;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 0 0.25rem;
+}
+
+#hp-booking-app .hp-content {
+    flex: 1;
+    padding: 1rem 1.25rem 1.5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Cards (Route, Details, Pay) */
+#hp-booking-app .hp-card {
+    background: #fff;
+    border-radius: var(--hp-radius);
+    padding: 1.25rem 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--hp-shadow-sm);
+    border: 1px solid var(--hp-border);
+}
+
+#hp-booking-app .hp-card-title {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--hp-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#hp-booking-app .hp-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--hp-forest);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+}
+
+#hp-booking-app .hp-icon-pin {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+
+#hp-booking-app .hp-icon-cal {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+}
+
+/* Route A/B with vertical line */
+#hp-booking-app .hp-route-rows {
+    position: relative;
+}
+
+#hp-booking-app .hp-route-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+#hp-booking-app .hp-route-line {
+    width: 2px;
+    height: 0.75rem;
+    background: var(--hp-border);
+    margin-left: calc(0.75rem + (1.5rem / 2) - 1px);
+    flex-shrink: 0;
+}
+
+#hp-booking-app .hp-form-group-flex {
+    flex: 1;
+    min-width: 0;
+}
+
+#hp-booking-app .hp-route-ab {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--hp-forest);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1.75rem;
+}
+
+#hp-booking-app .hp-route-ab.hp-route-b {
+    background: var(--hp-amber);
+    color: var(--hp-text);
+}
+
+/* Date picker with calendar icon */
+#hp-booking-app .hp-date-picker-wrapper {
+    position: relative;
+}
+
+#hp-booking-app .hp-date-input-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#hp-booking-app .hp-date-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border: 2px solid var(--hp-border);
+    border-radius: var(--hp-radius-sm);
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#hp-booking-app .hp-date-picker-wrapper:hover .hp-date-display,
+#hp-booking-app .hp-date-input-hidden:focus + .hp-date-display {
+    border-color: var(--hp-forest);
+}
+
+#hp-booking-app .hp-date-display:active,
+#hp-booking-app .hp-date-input-hidden:active + .hp-date-display {
+    box-shadow: 0 0 0 3px var(--hp-focus-ring);
+}
+
+#hp-booking-app .hp-date-text {
+    font-size: 1rem;
+    color: var(--hp-text);
+    font-weight: 500;
+}
+
+#hp-booking-app .hp-calendar-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--hp-forest);
+    flex-shrink: 0;
+}
+
+/* Address input with aligned A/B markers */
+#hp-booking-app .hp-address-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#hp-booking-app .hp-address-input-wrapper .hp-route-ab {
+    margin-top: 0;
+}
+
+#hp-booking-app .hp-address-input {
+    flex: 1;
+    min-width: 0;
+}
+
+#hp-booking-app .hp-time-note,
+#hp-booking-app .hp-loading-text,
+#hp-booking-app .hp-time-unavailable {
+    font-size: 0.8rem;
+    color: var(--hp-text-muted);
+    margin: 0.5rem 0 0;
+}
+
+#hp-booking-app .hp-time-unavailable {
+    font-style: italic;
+}
+
+#hp-booking-app .hp-cta {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem 1.25rem;
+}
+
+/* Confirm booking CTA – pulsing glow to draw attention */
+@keyframes hp-confirm-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(134, 169, 141, 0.55); }
+    60%  { box-shadow: 0 0 0 10px rgba(134, 169, 141, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(134, 169, 141, 0); }
+}
+#hp-booking-app button.hp-cta.hp-cta-confirm:not(:disabled) {
+    animation: hp-confirm-pulse 1.8s ease-out infinite;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+}
+
+/* Choose this Date button – appears inside Flatpickr calendar */
+@keyframes hp-choose-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(46, 74, 62, 0.5), 0 4px 15px rgba(46, 74, 62, 0.3); }
+    65%  { box-shadow: 0 0 0 12px rgba(46, 74, 62, 0), 0 4px 15px rgba(46, 74, 62, 0.15); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 74, 62, 0), 0 4px 15px rgba(46, 74, 62, 0.3); }
+}
+.flatpickr-calendar .flatpickr-confirm {
+    background: linear-gradient(135deg, #2E4A3E 0%, #404D24 100%) !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    margin: 8px 12px 12px 12px !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    text-align: center;
+    cursor: pointer;
+    animation: hp-choose-pulse 1.6s ease-out infinite;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.flatpickr-calendar .flatpickr-confirm:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+.flatpickr-calendar .flatpickr-confirm:active {
+    transform: translateY(0);
+    animation: none;
+}
+.flatpickr-calendar .flatpickr-confirm svg {
+    display: none !important; /* Hide default icon if any */
+}
+
+#hp-booking-app .hp-pay-now-note {
+    font-size: 0.9rem;
+    color: var(--hp-text-muted);
+    margin: 0.75rem 0 0;
+    padding: 0.75rem;
+    background: var(--hp-cream);
+    border-radius: var(--hp-radius-sm);
+}
+
+/* Stripe Card Elements – stacked form */
+#hp-booking-app .hp-card-form {
+    margin-top: 1rem;
+    padding: 0;
+}
+
+#hp-booking-app .hp-card-field {
+    margin-bottom: 0.75rem;
+}
+
+#hp-booking-app .hp-card-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+#hp-booking-app .hp-card-half {
+    flex: 1;
+}
+
+#hp-booking-app .hp-card-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--hp-text-muted);
+    margin-bottom: 0.4rem;
+}
+
+#hp-booking-app .hp-card-element {
+    background: #fff;
+    border: 2px solid var(--hp-border);
+    border-radius: var(--hp-radius-sm);
+    padding: 0.85rem 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#hp-booking-app .hp-card-element:hover {
+    border-color: var(--hp-forest);
+}
+
+#hp-booking-app .hp-card-element.StripeElement--focus {
+    border-color: var(--hp-forest);
+    box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.12);
+}
+
+#hp-booking-app .hp-card-element.StripeElement--invalid {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+#hp-booking-app .hp-card-errors {
+    font-size: 0.85rem;
+    color: #dc2626;
+    margin-top: 0.25rem;
+    min-height: 1.2em;
+}
+
+/* Thank you - Enhanced */
+#hp-booking-app .hp-thankyou {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+#hp-booking-app .hp-thankyou-card {
+    flex: 1;
+    background: #fff;
+    margin: 1rem 1.25rem;
+    padding: 2rem 1.5rem;
+    border-radius: var(--hp-radius);
+    box-shadow: var(--hp-shadow-sm);
+    border: 1px solid var(--hp-border);
+    text-align: center;
+}
+
+#hp-booking-app .hp-thankyou-icon {
+    margin-bottom: 1rem;
+}
+
+#hp-booking-app .hp-thankyou-title {
+    margin: 0 0 0.25rem;
+    font-size: 1.75rem;
+    color: var(--hp-forest);
+}
+
+#hp-booking-app .hp-thankyou-subtitle {
+    margin: 0 0 1.25rem;
+    font-size: 1rem;
+    color: var(--hp-text-muted);
+}
+
+#hp-booking-app .hp-thankyou-details {
+    background: var(--hp-cream);
+    border-radius: var(--hp-radius-sm);
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#hp-booking-app .hp-thankyou-ref,
+#hp-booking-app .hp-thankyou-email,
+#hp-booking-app .hp-thankyou-amount {
+    margin: 0.5rem 0;
+    color: var(--hp-text);
+}
+
+#hp-booking-app .hp-thankyou-amount strong {
+    color: var(--hp-forest);
+}
+
+#hp-booking-app .hp-thankyou-pay-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--hp-text-muted);
+}
+
+/* Override any red or theme styling so CTAs use brand colors */
+#hp-booking-app button,
+#hp-booking-app .hp-button,
+#hp-booking-app [class*="button"] {
+    border-color: transparent !important;
+}
+#hp-booking-app button:not(.hp-button-secondary):not(:disabled),
+#hp-booking-app .hp-button:not(.hp-button-secondary):not(:disabled) {
+    background: var(--hp-forest) !important;
+    color: #fff !important;
+}
+#hp-booking-app button:not(.hp-button-secondary):hover:not(:disabled),
+#hp-booking-app .hp-button:not(.hp-button-secondary):hover:not(:disabled) {
+    background: var(--hp-forest-dark) !important;
+}
+#hp-booking-app button:focus-visible,
+#hp-booking-app .hp-button:focus-visible {
+    outline: 2px solid var(--hp-forest) !important;
+    outline-offset: 2px !important;
+}
+#hp-booking-app button:disabled,
+#hp-booking-app .hp-button:disabled {
+    background: var(--hp-disabled-bg) !important;
+    color: var(--hp-disabled-text) !important;
+    cursor: not-allowed !important;
+}
+/* Select-style triggers (e.g. "Select a time") – forest accent, not red */
+#hp-booking-app button[class*="select"],
+#hp-booking-app .hp-time-trigger,
+#hp-booking-app .hp-form-group > button {
+    border: 1px solid var(--hp-border) !important;
+    color: var(--hp-text) !important;
+    background: #fff !important;
+}
+#hp-booking-app button[class*="select"]:hover:not(:disabled),
+#hp-booking-app .hp-time-trigger:hover:not(:disabled) {
+    border-color: var(--hp-forest) !important;
+    color: var(--hp-forest) !important;
+}
+
+/* Cards / steps */
+.hp-booking-step {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: var(--hp-radius);
+    padding: 28px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--hp-shadow-sm);
+}
+
+.hp-booking-step h2 {
+    margin-top: 0;
+    color: var(--hp-text);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hp-booking-step h3 {
+    color: var(--hp-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Form groups */
+.hp-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.hp-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--hp-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.hp-form-group input,
+.hp-form-group select,
+.hp-form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--hp-border);
+    border-radius: var(--hp-radius-sm);
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: var(--hp-text);
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.hp-form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.hp-form-group input::placeholder,
+.hp-form-group textarea::placeholder {
+    color: var(--hp-disabled-text);
+}
+
+.hp-form-group input:focus,
+.hp-form-group select:focus,
+.hp-form-group textarea:focus {
+    outline: none;
+    border-color: var(--hp-forest);
+    box-shadow: 0 0 0 3px var(--hp-focus-ring);
+}
+
+.hp-form-group input:disabled,
+.hp-form-group select:disabled,
+.hp-form-group textarea:disabled {
+    background: var(--hp-disabled-bg);
+    color: var(--hp-disabled-text);
+    cursor: not-allowed;
+}
+
+.hp-form-group small {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--hp-text-muted);
+}
+
+/* Primary CTA – forest green, no red */
+.hp-button {
+    display: inline-block;
+    background: var(--hp-forest);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: var(--hp-radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: var(--hp-shadow-sm);
+}
+
+.hp-button:hover:not(:disabled) {
+    background: var(--hp-forest-dark);
+}
+
+.hp-button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.hp-button:focus-visible {
+    outline: 2px solid var(--hp-forest);
+    outline-offset: 2px;
+}
+
+.hp-button:disabled {
+    background: var(--hp-disabled-bg);
+    color: var(--hp-disabled-text);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Secondary / back button */
+.hp-button-secondary {
+    background: #ffffff !important;
+    color: #2E4A3E !important;
+    border: 2px solid #2E4A3E !important;
+    margin-left: 0;
+    margin-top: 0.5rem;
+}
+
+.hp-button-secondary:hover:not(:disabled) {
+    background: #f0f4f2 !important;
+    color: #2E4A3E !important;
+    border-color: #2E4A3E !important;
+}
+
+/* Price display */
+.hp-price-display {
+    background: var(--hp-cream);
+    border: 2px solid var(--hp-forest);
+    border-radius: var(--hp-radius);
+    padding: 24px;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.hp-price-display .hp-price-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--hp-forest);
+    margin: 8px 0;
+}
+
+.hp-price-display .hp-price-breakdown {
+    font-size: 0.9rem;
+    color: var(--hp-text-muted);
+}
+
+/* Price estimation in step 1 (Date & Route) */
+.hp-price-estimate {
+    margin: 1.25rem 0;
+}
+.hp-price-estimate .hp-price-display {
+    margin: 0;
+}
+.hp-price-estimate .hp-price-note {
+    font-size: 0.8rem;
+    color: var(--hp-text-muted);
+    margin: 8px 0 0;
+}
+.hp-price-estimate.hp-price-loading {
+    padding: 16px;
+    text-align: center;
+}
+
+/* Messages */
+.hp-error {
+    background: var(--hp-error-bg);
+    border: 1px solid var(--hp-error-border);
+    color: var(--hp-error-text);
+    padding: 14px 16px;
+    border-radius: var(--hp-radius-sm);
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.hp-success {
+    background: var(--hp-success-bg);
+    border: 1px solid var(--hp-success-border);
+    color: var(--hp-success-text);
+    padding: 20px 24px;
+    border-radius: var(--hp-radius-sm);
+    margin-bottom: 1.25rem;
+}
+
+/* Calendar */
+.hp-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin: 1.25rem 0;
+}
+
+.hp-calendar-day {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--hp-border);
+    cursor: pointer;
+    border-radius: var(--hp-radius-sm);
+    transition: all 0.2s;
+    font-weight: 500;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.hp-calendar-day:hover:not(.unavailable) {
+    background: var(--hp-cream);
+    border-color: var(--hp-forest);
+}
+
+.hp-calendar-day.selected {
+    background: var(--hp-forest);
+    color: #fff;
+    border-color: var(--hp-forest);
+}
+
+.hp-calendar-day.unavailable {
+    background: var(--hp-disabled-bg);
+    color: var(--hp-disabled-text);
+    cursor: not-allowed;
+}
+
+/* Time slots */
+.hp-time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin: 1.25rem 0;
+}
+
+.hp-time-slot {
+    padding: 12px;
+    text-align: center;
+    border: 2px solid var(--hp-border);
+    border-radius: var(--hp-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.hp-time-slot:hover:not(.unavailable) {
+    border-color: var(--hp-forest);
+    background: var(--hp-cream);
+}
+
+.hp-time-slot.selected {
+    background: var(--hp-forest);
+    color: #fff;
+    border-color: var(--hp-forest);
+}
+
+.hp-time-slot.unavailable {
+    background: var(--hp-disabled-bg);
+    color: var(--hp-disabled-text);
+    cursor: not-allowed;
+    border-color: var(--hp-border);
+}
+
+/* Loading state */
+#hp-booking-loading {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--hp-text-muted);
+    font-size: 1rem;
+}
+
+/* Radio / payment options */
+.hp-form-group input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: var(--hp-forest);
+}
+
+.hp-form-group label {
+    display: flex;
+    align-items: center;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--hp-text);
+}
+
+/* Description text */
+#hp-booking-app .description {
+    font-size: 0.875rem;
+    color: var(--hp-text-muted);
+    margin-top: 8px;
+}
+
+/* ==========================================================================
+   Time section & Continue to Details – custom CSS only (override theme)
+   No theme colors; forest/cream palette only.
+   ========================================================================== */
+
+/* Time section: "Select a time" trigger – white bg, forest border (not maroon/red) */
+#hp-booking-app button[class*="select"],
+#hp-booking-app button[class*="Select"],
+#hp-booking-app .hp-time-trigger,
+#hp-booking-app [class*="time"] button:first-of-type,
+#hp-booking-app [class*="Time"] button {
+    background: #fff !important;
+    border: 1px solid var(--hp-border) !important;
+    color: var(--hp-text) !important;
+}
+#hp-booking-app button[class*="select"]:hover:not(:disabled),
+#hp-booking-app button[class*="Select"]:hover:not(:disabled),
+#hp-booking-app .hp-time-trigger:hover:not(:disabled) {
+    border-color: var(--hp-forest) !important;
+    color: var(--hp-forest) !important;
+}
+
+/* Time slot chips – forest border and text (not maroon); selected = forest fill */
+#hp-booking-app .hp-time-slot,
+#hp-booking-app [class*="time-slot"],
+#hp-booking-app [class*="TimeSlot"] {
+    background: #fff !important;
+    border: 2px solid var(--hp-border) !important;
+    color: var(--hp-text) !important;
+}
+#hp-booking-app .hp-time-slot:hover:not(.unavailable),
+#hp-booking-app [class*="time-slot"]:hover:not(.unavailable) {
+    border-color: var(--hp-forest) !important;
+    background: var(--hp-cream) !important;
+    color: var(--hp-forest) !important;
+}
+#hp-booking-app .hp-time-slot.selected,
+#hp-booking-app [class*="time-slot"].selected,
+#hp-booking-app [class*="TimeSlot"].selected {
+    background: var(--hp-forest) !important;
+    border-color: var(--hp-forest) !important;
+    color: #fff !important;
+}
+
+/* Continue to Details – primary CTA only (forest, no theme color) */
+#hp-booking-app .hp-button:not(.hp-button-secondary),
+#hp-booking-app button.hp-button:not(.hp-button-secondary) {
+    background: var(--hp-forest) !important;
+    border: none !important;
+    color: #fff !important;
+}
+#hp-booking-app .hp-button:hover:not(:disabled):not(.hp-button-secondary),
+#hp-booking-app button.hp-button:hover:not(:disabled):not(.hp-button-secondary) {
+    background: var(--hp-forest-dark) !important;
+    color: #fff !important;
+}
+#hp-booking-app .hp-button:disabled,
+#hp-booking-app button:disabled {
+    background: var(--hp-disabled-bg) !important;
+    color: var(--hp-disabled-text) !important;
+}
+
+/* Back / secondary button – white with forest border (highest specificity to win) */
+#hp-booking-app button.hp-button.hp-button-secondary,
+#hp-booking-app .hp-button.hp-button-secondary {
+    background: #ffffff !important;
+    color: #2E4A3E !important;
+    border: 2px solid #2E4A3E !important;
+}
+#hp-booking-app button.hp-button.hp-button-secondary:hover:not(:disabled),
+#hp-booking-app .hp-button.hp-button-secondary:hover:not(:disabled) {
+    background: #f0f4f2 !important;
+    color: #2E4A3E !important;
+    border-color: #2E4A3E !important;
+}
+
+/* Payment radios on Pay step */
+#hp-booking-app .hp-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#hp-booking-app .hp-radio-label input[type="radio"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--hp-forest);
+}
+
+/* Responsive – use most of screen height on phone */
+@media (max-width: 768px) {
+    #hp-booking-app {
+        padding: 0;
+    }
+
+    #hp-booking-app .hp-content {
+        padding: 1rem 1rem 2rem;
+    }
+
+    #hp-booking-app .hp-header {
+        padding: 1rem 1rem 0.75rem;
+    }
+
+    #hp-booking-app .hp-header-title {
+        font-size: 1.35rem;
+    }
+
+    #hp-booking-app .hp-card {
+        padding: 1rem 1rem;
+    }
+
+    .hp-button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .hp-button-secondary {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .hp-time-slots {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #hp-booking-app .hp-cta {
+        margin-top: 0.75rem;
+    }
+}
+
+@media (min-height: 600px) and (max-width: 768px) {
+    #hp-booking-app .hp-content {
+        padding-bottom: env(safe-area-inset-bottom, 1.5rem);
+    }
+}
